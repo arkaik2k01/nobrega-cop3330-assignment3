@@ -1,14 +1,16 @@
 @startuml
 class App {
-    - Scanner in
-    Driver code
+    + NameSorter sorter
+    + App prog
+      Driver code
+    + readInput()
+    + sendToList()
 }
 
 class NameSorter {
     - ArrayList names
     + addToList()
     + sortList()
-    + getList()
     + printList()
 }
 @enduml

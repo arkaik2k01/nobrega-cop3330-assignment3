@@ -39,39 +39,30 @@ Implement this program by reading in the names from the user, one at a time, and
 Use the program to sort data from a large data set (e.g. census data) and use a profiler to analyze its performance.
 */
 
-import java.io.IOException;
-import java.nio.file.Paths;
-import java.util.Scanner;
 
-public class App
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class NameSorter
 {
-    public static void main(String[] args)
+    ArrayList<String> names = new ArrayList<>();
+
+    public void addToList(String input)
     {
-        //Create class vars
-        App prog = new App();
-        NameSorter sorter = new NameSorter();
-
-        //Create a scanner that points towards the file
-        //Make while loop that will add names to an ArrayList in NameSorter until EOF
-        prog.getInput(sorter);
-
-        //Sort all names inside the ArrayList
-        sorter.sortList();
-        //Call a method to iterate through the ArrayList and print the names
-        sorter.printList();
+        this.names.add(input);
     }
 
-    private void getInput(NameSorter sorter)
+    public void sortList()
     {
-        try {
-            Scanner in = new Scanner(Paths.get("exercise41_input.txt"));
-            while(in.hasNextLine()) {
-                String input = in.nextLine();
-                sorter.addToList(input);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
+        Collections.sort(this.names);
+    }
+
+    public void printList()
+    {
+        System.out.println("Total of "+ names.size() +" names");
+        System.out.println("--------------------");
+        for(int i = 0; i < names.size(); i++) {
+            System.out.println(names.get(i));
         }
     }
-
 }
