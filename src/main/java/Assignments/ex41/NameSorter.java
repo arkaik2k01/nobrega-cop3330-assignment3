@@ -40,6 +40,8 @@ Use the program to sort data from a large data set (e.g. census data) and use a 
 */
 
 
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -59,10 +61,15 @@ public class NameSorter
 
     public void printList()
     {
-        System.out.println("Total of "+ names.size() +" names");
-        System.out.println("--------------------");
-        for(int i = 0; i < names.size(); i++) {
-            System.out.println(names.get(i));
+        try {
+            PrintWriter write = new PrintWriter("exercise41_output.txt");
+            write.println("Total of "+ names.size() +" names");
+            write.println("--------------------");
+            for(int i = 0; i < names.size(); i++) {
+                write.println(names.get(i));
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
     }
 }
