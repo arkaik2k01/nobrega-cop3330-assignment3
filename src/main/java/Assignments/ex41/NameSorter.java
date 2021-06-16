@@ -62,12 +62,13 @@ public class NameSorter
     public void printList()
     {
         try {
-            PrintWriter write = new PrintWriter("exercise41_output.txt");
+            PrintWriter write = new PrintWriter("src\\main\\java\\Assignments\\ex41\\exercise41_output.txt");
             write.println("Total of "+ names.size() +" names");
             write.println("--------------------");
             for(int i = 0; i < names.size(); i++) {
                 write.println(names.get(i));
             }
+            write.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
