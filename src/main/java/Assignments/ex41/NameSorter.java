@@ -49,6 +49,16 @@ public class NameSorter
 {
     ArrayList<String> names = new ArrayList<>();
 
+    public ArrayList<String> getNames()
+    {
+        return names;
+    }
+
+    public void setNames(ArrayList<String> names)
+    {
+        this.names = names;
+    }
+
     public void addToList(String input)
     {
         this.names.add(input);
