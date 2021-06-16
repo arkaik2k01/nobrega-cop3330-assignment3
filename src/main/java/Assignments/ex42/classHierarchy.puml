@@ -1,0 +1,31 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class App {
+    -Employees list
+
+    - void readInput
+}
+
+class Employees {
+    -ArrayList<Person> employee
+
+    + void processInput(String)
+    + void printTable()
+}
+
+class Person {
+    - lastName
+    - firstNAme
+    - salary
+
+    +void createPerson(String, String, double)
+    +String getLastName()
+    +String getFirstName()
+    +double getSalary()
+    +void setLastName()
+    +void setFirstName()
+    +void setSalary()
+}
+
+@enduml
