@@ -1,0 +1,14 @@
+@startuml
+class App {
+    - Scanner in
+    Driver code
+}
+
+class NameSorter {
+    - ArrayList names
+    + addToList()
+    + sortList()
+    + getList()
+    + printList()
+}
+@enduml
