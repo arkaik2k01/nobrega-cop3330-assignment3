@@ -2,9 +2,7 @@
 class App {
     + NameSorter sorter
     + App prog
-      Driver code
-    + readInput()
-    + sendToList()
+    - getInput()
 }
 
 class NameSorter {
