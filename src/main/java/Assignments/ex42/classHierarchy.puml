@@ -2,10 +2,10 @@
 'https://plantuml.com/class-diagram
 
 class App {
-    -Employees list
+    Employees list
+    Static array that holds input
 
-    - void buildReader()
-    + String getInput()
+    - String getInput()
     - void sendOutput()
 }
 

@@ -61,9 +61,9 @@ public class Employee
 
         //Algorithm
         for (int i = 0; i < input.length(); i++) {
-            if (input.charAt(i) == ',') {
+            if (input.charAt(i) == ',' || i == input.length()-1) {
                 inputSeparated[posAtArr] = input.substring(startOfString, i);
-                startOfString = i;
+                startOfString = i+1;
                 posAtArr++;
             }
         }
@@ -74,8 +74,7 @@ public class Employee
     //createPerson(), Create a person with those three strings
     public Person createPerson(String name, String lastName, double salary)
     {
-        Person newPerson = new Person(name, lastName, salary);
-        return newPerson;
+        return new Person(name, lastName, salary);
     }
 
     //Add person to list
@@ -88,5 +87,10 @@ public class Employee
     public Person getPerson(int i)
     {
         return employee.get(i);
+    }
+
+    public ArrayList<Person> getEmployee()
+    {
+        return employee;
     }
 }
