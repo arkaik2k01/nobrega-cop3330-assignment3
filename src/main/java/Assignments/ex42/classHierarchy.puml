@@ -4,7 +4,8 @@
 class App {
     -Employees list
 
-    - void readInput()
+    - void buildReader()
+    + String getInput()
     - void sendOutput()
 }
 
@@ -12,8 +13,9 @@ class Employees {
     -ArrayList<Person> employee
 
     + void processInput(String)
-    + void addPerson(String, String, double)
-    + void printTable()
+    + void createPerson(String, String, double)
+    + void addPerson(Person)
+    + void getPerson(int)
 }
 
 class Person {
@@ -25,9 +27,6 @@ class Person {
     + String getLastName()
     + String getFirstName()
     + double getSalary()
-    + void setLastName()
-    + void setFirstName()
-    + void setSalary()
 }
 
 @enduml

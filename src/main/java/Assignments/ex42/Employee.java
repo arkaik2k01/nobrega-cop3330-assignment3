@@ -40,13 +40,37 @@ Sort the results by salary from highest to lowest.
 Rework your program to use a CSV parsing library and compare the results.
 */
 
-public class App
+
+import java.util.ArrayList;
+
+public class Employee
 {
-    public static void main(String[] args)
+    //Holds an arrayList of employee type, each having a lastName, firstName, salary
+    ArrayList<Person> employee = new ArrayList<>();
+
+    //Method will separate CSV into three different strings
+    public void processInput(String input)
     {
-        //Build reader and read input
-        //Process input through Employee class
-        //Once processed, add to employeeList
-        //After its done, print names and format table
+        String name, lastName;
+        double salary;
+    }
+
+    //createPerson(), Create a person with those three strings
+    public Person createPerson(String name, String lastName, double salary)
+    {
+        Person newPerson = new Person(name, lastName, salary);
+        return newPerson;
+    }
+
+    //Add person to list
+    public void addPerson(Person newPerson)
+    {
+        employee.add(newPerson);
+    }
+
+    //getPerson(), Sends information about the name and salary
+    public Person getPerson(int i)
+    {
+        return employee.get(i);
     }
 }
