@@ -49,10 +49,26 @@ public class Employee
     ArrayList<Person> employee = new ArrayList<>();
 
     //Method will separate CSV into three different strings
-    public void processInput(String input)
+    public String[] processInput(String input)
     {
         String name, lastName;
         double salary;
+
+        //Separate strings and add to a string array
+        String[] inputSeparated = new String[3];
+        int startOfString = 0;
+        int posAtArr = 0;
+
+        //Algorithm
+        for (int i = 0; i < input.length(); i++) {
+            if (input.charAt(i) == ',') {
+                inputSeparated[posAtArr] = input.substring(startOfString, i);
+                startOfString = i;
+                posAtArr++;
+            }
+        }
+
+        return inputSeparated;
     }
 
     //createPerson(), Create a person with those three strings

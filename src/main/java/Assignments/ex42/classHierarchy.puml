@@ -12,10 +12,10 @@ class App {
 class Employees {
     -ArrayList<Person> employee
 
-    + void processInput(String)
-    + void createPerson(String, String, double)
-    + void addPerson(Person)
-    + void getPerson(int)
+    + processInput(String)
+    + createPerson(String, String, double)
+    + addPerson(Person)
+    + getPerson(int)
 }
 
 class Person {
@@ -23,7 +23,7 @@ class Person {
     - firstNAme
     - salary
 
-    + void createPerson(String, String, double)
+    + Person(String, String, double)
     + String getLastName()
     + String getFirstName()
     + double getSalary()
