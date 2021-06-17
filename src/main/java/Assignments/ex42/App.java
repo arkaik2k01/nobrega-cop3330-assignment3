@@ -40,7 +40,9 @@ Sort the results by salary from highest to lowest.
 Rework your program to use a CSV parsing library and compare the results.
 */
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Scanner;
 
@@ -90,7 +92,7 @@ public class App
     private void getInput()
     {
         try {
-            Scanner in = new Scanner(Paths.get("src\\main\\java\\Assignments\\ex42\\exercise42_input.txt"));
+            Scanner in = new Scanner(new File("src/main/java/Assignments/ex42/exercise42_input.txt"));
             //In a while loop, read input and add to array
             int i = 0;
             while (in.hasNextLine()) {

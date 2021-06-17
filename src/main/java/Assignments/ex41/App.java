@@ -39,6 +39,7 @@ Implement this program by reading in the names from the user, one at a time, and
 Use the program to sort data from a large data set (e.g. census data) and use a profiler to analyze its performance.
 */
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.Scanner;
@@ -64,7 +65,7 @@ public class App
     private void getInput(NameSorter sorter)
     {
         try {
-            Scanner in = new Scanner(Paths.get("src\\main\\java\\Assignments\\ex41\\exercise41_input.txt"));
+            Scanner in = new Scanner(new File("src/main/java/Assignments/ex41/exercise41_input.txt"));
             while(in.hasNextLine()) {
                 String input = in.nextLine();
                 sorter.addToList(input);
