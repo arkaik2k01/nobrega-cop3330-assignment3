@@ -62,6 +62,13 @@ public class Employee
         //Algorithm
         for (int i = 0; i < input.length(); i++) {
             if (input.charAt(i) == ',' || i == input.length()-1) {
+                if(i == input.length()-1)
+                {
+                    inputSeparated[posAtArr] = input.substring(startOfString, i+1);
+                    startOfString = i+1;
+                    posAtArr++;
+                    continue;
+                }
                 inputSeparated[posAtArr] = input.substring(startOfString, i);
                 startOfString = i+1;
                 posAtArr++;
