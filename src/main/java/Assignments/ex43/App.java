@@ -63,11 +63,7 @@ public class App
     private Boolean wantsOptFolders(String prompt)
     {
         String input = prog.getInput(prompt);
-        if(input.equalsIgnoreCase("yes") || input.equalsIgnoreCase("y"))
-        {
-            return true;
-        }
-        return false;
+        return input.equalsIgnoreCase("yes") || input.equalsIgnoreCase("y");
     }
 
     private String getInput(String prompt)

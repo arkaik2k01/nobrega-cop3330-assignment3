@@ -2,10 +2,11 @@
 'https://plantuml.com/class-diagram
 
 class App {
-    websiteGenerator websiteGenerator
+    websiteGenerator generate
     App prog
 
     readInput()
+    wantsOptFolder()
 }
 
 note left: driver code
@@ -22,6 +23,6 @@ class websiteGenerator {
     int createWebsite()
     void isCreated()
 
-    std set&get functions
+    std set&get functions()
 }
 @enduml
