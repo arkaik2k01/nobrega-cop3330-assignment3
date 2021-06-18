@@ -5,6 +5,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 /*
+ *  UCF COP3330 Summer 2021 Assignment 3 Solution
+ *  Copyright 2021 Miguel Nobrega
+ */
+
+/*
 Exercise 43 - Website Generator
 Programming languages can create files and folders too.
 
@@ -114,7 +119,7 @@ public class websiteGenerator
         if(success == 0) {
             System.out.println("Created src/main/java/Assignments/ex43/website/" + this.site + file);
         }
-        else if(success != 0)
+        else
         {
             System.out.println("ERROR at "+file);
         }

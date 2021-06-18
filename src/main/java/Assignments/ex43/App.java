@@ -1,6 +1,11 @@
 package Assignments.ex43;
 
 /*
+ *  UCF COP3330 Summer 2021 Assignment 3 Solution
+ *  Copyright 2021 Miguel Nobrega
+ */
+
+/*
 Exercise 43 - Website Generator
 Create a program that generates a website skeleton with the following specifications:
 Prompt for the name of the site.
