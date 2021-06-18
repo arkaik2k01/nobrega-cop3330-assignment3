@@ -1,0 +1,29 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class App {
+    websiteGenerator websiteGenerator
+    App prog
+
+    readInput()
+}
+
+note left: driver code
+
+App <|-- websiteGenerator
+
+class websiteGenerator {
+    -String siteName
+    -String author
+    -Boolean isJScript
+    -Boolean isCSS
+
+    void createJScriptFolder()
+    void createCSSFolder()
+    void createMainFolder()
+    void createIndex()
+    void createWebsite()
+
+    std set&get functions
+}
+@enduml
