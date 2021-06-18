@@ -84,11 +84,14 @@ public class websiteGenerator
     {
         int success;
         try {
-            success = createFolder(null);
-            isCreated(success, null);
+            //Create main folder
+            success = createFolder("");
+            isCreated(success, "");
+            //Create index, write to index
             success = createIndex();
             isCreated(success, "/index.html");
             writeToIndex();
+            //Create optional folders
             if (this.isJScript) {
                 success = createFolder("/js");
                 isCreated(success, "/js");
@@ -97,9 +100,11 @@ public class websiteGenerator
                 success = createFolder("/css");
                 isCreated(success, "/css");
             }
+            //Success!
             return 0;
         } catch (Exception e) {
             e.printStackTrace();
+            // :(
             return 1;
         }
     }

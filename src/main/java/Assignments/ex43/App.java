@@ -25,6 +25,49 @@ Implement this in a scripting language on Windows, OSX, and Linux.
 Implement this as a web application that provides the specified site as a zip file.
 */
 
+import java.util.Scanner;
+
 public class App
 {
+    private static final Scanner in = new Scanner(System.in);
+    private static final App prog = new App();
+
+    public static void main(String[] args)
+    {
+        //Create program variables
+
+        websiteGenerator generator = new websiteGenerator();
+
+        //Get input from user
+        //Save site name and set in generator
+        generator.setSite(prog.getInput("Site name: "));
+        //Save author name and set in generator
+        generator.setAuthor(prog.getInput("Author: "));
+        //Ask if JS and set in generator
+        generator.setJScript(prog.wantsOptFolders("Do you want a JavaScript folder?"));
+        //Ask if CSS and set in generator
+        generator.setCSS(prog.wantsOptFolders("Do you want a CSS folder?"));
+
+        //Create main folder
+        //Create and print to index
+        //Create js folder if necessary
+        //Create css folder if necessary
+        generator.createWebsite();
+    }
+
+    private Boolean wantsOptFolders(String prompt)
+    {
+        String input = prog.getInput(prompt);
+        if(input.equalsIgnoreCase("yes") || input.equalsIgnoreCase("y"))
+        {
+            return true;
+        }
+        return false;
+    }
+
+    private String getInput(String prompt)
+    {
+        System.out.print(prompt);
+        return in.nextLine();
+    }
 }
