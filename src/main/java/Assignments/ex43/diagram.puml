@@ -13,16 +13,14 @@ note left: driver code
 App <|-- websiteGenerator
 
 class websiteGenerator {
-    -String siteName
-    -String author
-    -Boolean isJScript
-    -Boolean isCSS
+    -String siteName, author
+    -Boolean isJScript, isCSS
 
-    void createJScriptFolder()
-    void createCSSFolder()
-    void createMainFolder()
-    void createIndex()
-    void createWebsite()
+    int createFolder()
+    int createIndex()
+    int writeToIndex()
+    int createWebsite()
+    void isCreated()
 
     std set&get functions
 }
