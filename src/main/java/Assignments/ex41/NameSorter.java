@@ -72,7 +72,7 @@ public class NameSorter
     public void printList()
     {
         try {
-            PrintWriter write = new PrintWriter("src/main/java/Assignments/ex41/exercise41_output.txt");
+            PrintWriter write = new PrintWriter("./output/exercise41_output.txt");
             write.println("Total of "+ names.size() +" names");
             write.println("--------------------");
             for (String name : names) {

@@ -65,7 +65,7 @@ public class App
     private void getInput(NameSorter sorter)
     {
         try {
-            Scanner in = new Scanner(new File("src/main/java/Assignments/ex41/exercise41_input.txt"));
+            Scanner in = new Scanner(new File("./input/exercise41_input.txt"));
             while(in.hasNextLine()) {
                 String input = in.nextLine();
                 sorter.addToList(input);

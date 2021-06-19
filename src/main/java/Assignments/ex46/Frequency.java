@@ -1,10 +1,12 @@
 package Assignments.ex46;
 
+import java.util.Comparator;
+import java.util.Map;
 import java.util.TreeMap;
 
 public class Frequency
 {
-    private TreeMap<String, Integer> freq = new TreeMap<>();
+    private Map<String, Integer> freq = new TreeMap<>();
 
     public void addToMap(String word)
     {
@@ -18,13 +20,43 @@ public class Frequency
 
     }
 
-    public TreeMap<String, Integer> reverseOrder()
+    public Map<String, Integer> reverseOrder(TreeMap<String, Integer> map)
     {
+        Compare comparator = new Compare(map);
 
+        Map<String, Integer> reversed = new TreeMap<String, Integer>(comparator);
+
+        reversed.putAll(map);
+
+        return reversed;
     }
 
-    public TreeMap<String, Integer> getFreq()
+    public Map<String, Integer> getFreq()
     {
         return freq;
+    }
+
+    public void setFreq(Map<String, Integer> freq)
+    {
+        this.freq = freq;
+    }
+}
+
+class Compare implements Comparator<Object>
+{
+
+    Map<String, Integer> map;
+
+    public Compare(Map<String, Integer> map) {
+        this.map = map;
+    }
+
+    public int compare(Object o1, Object o2) {
+
+        if (map.get(o2).equals(map.get(o1))) {
+            return 1;
+        } else
+            return map.get(o2).compareTo(map.get(o1));
+
     }
 }

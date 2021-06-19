@@ -92,7 +92,7 @@ public class App
     private void getInput()
     {
         try {
-            Scanner in = new Scanner(new File("src/main/java/Assignments/ex42/exercise42_input.txt"));
+            Scanner in = new Scanner(new File("./input/exercise42_input.txt"));
             //In a while loop, read input and add to array
             int i = 0;
             while (in.hasNextLine()) {

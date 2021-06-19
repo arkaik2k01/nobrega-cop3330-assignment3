@@ -43,7 +43,7 @@ public class websiteGenerator
 
     public int createFolder(String folder)
     {
-        File f = new File("./src/main/java/Assignments/ex43/website/" + this.site + folder);
+        File f = new File("./output/website/" + this.site + folder);
         try {
             if (f.mkdirs()) {
                 return 0;
@@ -58,7 +58,7 @@ public class websiteGenerator
 
     public int createIndex()
     {
-        File f = new File("./src/main/java/Assignments/ex43/website/" + this.site + "/index.html");
+        File f = new File("./output/website/" + this.site + "/index.html");
         try {
             if (f.createNewFile()) {
                 return 0;
@@ -74,7 +74,7 @@ public class websiteGenerator
     public int writeToIndex()
     {
         try {
-            FileWriter output = new FileWriter("./src/main/java/Assignments/ex43/website/" + this.site + "/index.html");
+            FileWriter output = new FileWriter("./output/website/" + this.site + "/index.html");
             output.write("<title>" + this.site + "</title>\n");
             output.write("<meta>" + this.author + "</meta>\n");
             output.close();
@@ -117,7 +117,7 @@ public class websiteGenerator
     public void isCreated(int success, String file)
     {
         if(success == 0) {
-            System.out.println("Created src/main/java/Assignments/ex43/website/" + this.site + file);
+            System.out.println("Created output/website/" + this.site + file);
         }
         else
         {
