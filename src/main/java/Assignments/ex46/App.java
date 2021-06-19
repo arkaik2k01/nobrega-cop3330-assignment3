@@ -27,11 +27,49 @@ Test the performance of your calculation by providing a very large input file, s
 Write the program in another language and compare the processing times of the two implementations.
 */
 
+import java.io.File;
+import java.io.IOException;
+import java.util.Map;
+import java.util.Scanner;
+
 public class App
 {
+    private static final Frequency freq = new Frequency();
+
     public static void main(String[] args)
     {
+        App prog = new App();
+        //Construct file reader
+        File input = new File("./input/exercise46_input.txt");
+        //Read from file until EOF
+        //Add words read in to Map
+        prog.getInput(input);
 
-
+        //Sort map by value
+        freq.setFreq(freq.reverseOrder(freq.getFreq()));
+        //Print map key
+        //For loop to print * depending on key value
     }
+
+    private void getInput(File input)
+    {
+        try {
+            Scanner in = new Scanner(input);
+            while (in.hasNext()) {
+                freq.addToMap(in.next());
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void sendOutput()
+    {
+        //Iterate through map values
+        for (Map.Entry<String, Integer> entry : freq.getFreq().entrySet()) {
+            //Get map entries and send to print key
+            freq.printKey(entry);
+        }
+    }
+
 }
