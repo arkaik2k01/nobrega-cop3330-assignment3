@@ -14,7 +14,7 @@ public class Frequency
             int num = freq.get(word) + 1;
             freq.put(word, num);
         } else {
-            freq.put(word, 0);
+            freq.put(word, 1);
         }
 
     }

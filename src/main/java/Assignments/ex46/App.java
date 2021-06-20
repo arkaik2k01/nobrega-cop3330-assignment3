@@ -23,7 +23,8 @@ Constraint
 Ensure that the most used word is at the top of the report and the least used words are at the bottom.
 Challenges
 Use a graphical program and generate bar graphs.
-Test the performance of your calculation by providing a very large input file, such as Shakespeare's Macbeth. Tweak your algorithm so that it performs the word counting as fast as possible.
+Test the performance of your calculation by providing a very large input file, such as Shakespeare's Macbeth.
+Tweak your algorithm so that it performs the word counting as fast as possible.
 Write the program in another language and compare the processing times of the two implementations.
 */
 
@@ -49,6 +50,7 @@ public class App
         freq.setFreq(freq.reverseOrder(freq.getFreq()));
         //Print map key
         //For loop to print * depending on key value
+        prog.sendOutput();
     }
 
     private void getInput(File input)
@@ -68,7 +70,7 @@ public class App
         //Iterate through map values
         for (Map.Entry<String, Integer> entry : freq.getFreq().entrySet()) {
             //Get map entries and send to print key
-            freq.printKey(entry);
+            System.out.println(freq.printKey(entry));
         }
     }
 
