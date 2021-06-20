@@ -41,10 +41,83 @@ Ensure that the product search is case insensitive.
 When a product is not found, ask if the product should be added. If yes, ask for the price and the quantity, and save it in the JSON file. Ensure the newly added product is immediately available for searching without restarting the program.
 */
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class App
 {
-    //Ask user for name of input
-    //Check if available in arrayList
-    //Send output
+    static Boolean done = true;
+    private static final Scanner in = new Scanner(System.in);
+
+    public static void main(String[] args)
+    {
+        App prog = new App();
+
+        //Read from json file into ArrayList
+        JsonObject file = prog.getJsonFile();
+        assert file != null;
+        ArrayList<Products> list = prog.readGSON(file);
+
+        while (done) {
+            //Ask user for name of input
+            String input = prog.getInput();
+            //Check if available in arrayList
+            for(int i = 0; i < list.size(); i++)
+            {
+                boolean contained = list.get(i).equals(input);
+                //Send output
+                prog.isContained(contained, list, i);
+            }
+        }
+    }
+
+    private void isContained (Boolean bool, ArrayList<Products> list, int i) {
+        if(bool)
+        {
+            list.get(i).printProduct();
+            done = false;
+        }
+    }
+
+    private JsonObject getJsonFile()
+    {
+        try {
+            return JsonParser.parseReader(new FileReader("./input/exercise44_input.json")).getAsJsonObject();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    private String getInput()
+    {
+        System.out.print("What is the name of your product? ");
+        return in.nextLine();
+    }
+
+    private ArrayList<Products> readGSON(JsonObject jsonFile)
+    {
+        JsonArray arr = jsonFile.getAsJsonArray("products");
+        ArrayList<Products> list = new ArrayList<>();
+        for(int i = 0; i < arr.size(); i++) {
+            JsonObject cur = (JsonObject) arr.get(i);
+            String name = String.valueOf(cur.get("name"));
+            double price = Double.parseDouble(String.valueOf(cur.get("price")));
+            int quan = Integer.parseInt(String.valueOf(cur.get("quantity")));
+            Products prod = createProduct(name, price, quan);
+            list.add(prod);
+        }
+        return list;
+    }
+
+    private Products createProduct(String name, double price, int quan) {
+        return new Products(name, price, quan);
+    }
 
 }

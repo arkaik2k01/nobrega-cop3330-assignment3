@@ -41,10 +41,15 @@ Ensure that the product search is case insensitive.
 When a product is not found, ask if the product should be added. If yes, ask for the price and the quantity, and save it in the JSON file. Ensure the newly added product is immediately available for searching without restarting the program.
 */
 
+import com.google.gson.annotations.SerializedName;
+
 public class Products
 {
+    @SerializedName("name")
     private String name;
+    @SerializedName("price")
     private double price;
+    @SerializedName("quantity")
     private int quantity;
 
     //constructor
@@ -56,11 +61,15 @@ public class Products
     }
 
     //Send product as output
-    public String printProduct(Products prod)
+    public String printProduct()
     {
-        return "Name: "+ prod.getName() +"\nPrice: "+ prod.getPrice() +"\nQuantity: "+ prod.getQuantity();
+        return "Name: " + getName() + "\nPrice: " + getPrice() + "\nQuantity: " + getQuantity();
     }
 
+    public boolean equals(String name)
+    {
+        return name.equalsIgnoreCase(getName());
+    }
 
     //getter & setter
     public String getName()
