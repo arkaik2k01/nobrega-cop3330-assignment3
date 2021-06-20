@@ -43,4 +43,8 @@ When a product is not found, ask if the product should be added. If yes, ask for
 
 public class App
 {
+    //Ask user for name of input
+    //Check if available in arrayList
+    //Send output
+
 }
